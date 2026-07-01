@@ -1,5 +1,7 @@
 """Test numerical profiling with Keras v3 models."""
 
+from pathlib import Path
+
 import numpy as np
 import pytest
 
@@ -85,7 +87,11 @@ def test_keras_v3_numerical_profiling_conv_model():
 
 @pytest.mark.skipif(not __keras_profiling_enabled__, reason='Keras 3.0 or higher is required')
 @pytest.mark.skip(reason='convert_from_config needs update for Keras v3 model serialization format')
+<<<<<<< HEAD
 def test_keras_v3_numerical_profiling_with_hls_model():
+=======
+def test_keras_v3_numerical_profiling_with_hls_model(test_case_id):
+>>>>>>> pr-1489
     """Test numerical profiling with both Keras v3 model and hls4ml model."""
     import hls4ml
 
@@ -104,7 +110,11 @@ def test_keras_v3_numerical_profiling_with_hls_model():
     hls_model = hls4ml.converters.convert_from_keras_model(
         model,
         hls_config=config,
+<<<<<<< HEAD
         output_dir='/tmp/test_keras_v3_profiling_hls',
+=======
+        output_dir=str(Path(__file__).parent / test_case_id),
+>>>>>>> pr-1489
         backend='Vivado',
         allow_da_fallback=True,
         allow_v2_fallback=True,
@@ -138,4 +148,8 @@ def test_keras_v3_numerical_profiling_batch_norm():
     wp, _, _, _ = numerical(model)
     assert wp is not None
     # Dense has 1 bar, BatchNorm has 1 bar, second Dense has 1 bar = 3 bars
+<<<<<<< HEAD
     assert count_bars_in_figure(wp) == 3
+=======
+    assert count_bars_in_figure(wp) == 3
+>>>>>>> pr-1489
