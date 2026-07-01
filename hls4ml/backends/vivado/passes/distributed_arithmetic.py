@@ -136,7 +136,8 @@ class DistributedArithmeticCodegen(OptimizerPass):
         node.attributes['da_kernel_cost'] = sol.cost
 
         backend = model.config.get_config_value('Backend').lower()
-        assert backend in ('vitis', 'vivado')
+        # assert backend in ('vitis', 'vivado')
+        assert backend in ('vitis', 'vivado', 'coyoteaccelerator')
         flavor = 'vitis'
 
         pragmas = ['#pragma HLS INLINE'] if flavor == 'vitis' else None

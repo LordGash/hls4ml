@@ -255,7 +255,8 @@ void compute_output_buffer_2d(
     hls::stream<res_T> &res_stream,
     typename CONFIG_T::weight_t weights[CONFIG_T::kernel_size * CONFIG_T::n_chan * CONFIG_T::n_filt],
     typename CONFIG_T::bias_t biases[CONFIG_T::n_filt]) {
-    #pragma HLS INLINE OFF
+    // #pragma HLS INLINE OFF
+    #pragma HLS INLINE
 
     // Thresholds
     const static int lShiftX = CONFIG_T::filt_width - 1;

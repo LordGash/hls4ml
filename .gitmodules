@@ -12,5 +12,5 @@
 	url = https://github.com/hlslibs/ac_math.git
 [submodule "hls4ml/contrib/Coyote"]
 	path = hls4ml/contrib/Coyote
-	url = https://github.com/fpgasystems/Coyote.git
+	url = https://github.com/LordGash/Coyote.git
 	branch = integrations/hls4ml

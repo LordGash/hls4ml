@@ -101,4 +101,7 @@ class CoyoteOverlay:
         print(f'Mean latency: {round(avg_latency / total_batches, 3)}us (inference only)')
         print(f'Mean throughput: {round(avg_throughput / total_batches, 1)} samples/s (inference only)')
 
-        return y 
+        latency = round(avg_latency / total_batches, 3)
+        throughput = round(avg_throughput / total_batches, 1)
+
+        return y, latency, throughput, batch_size, total_batches
